@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Moundhir Tiouche — Chef Privé à Domicile</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Georgia',serif;background:#111;color:#e8e0d0;line-height:1.6}
+a{text-decoration:none}
+nav{background:#0a0a0a;border-bottom:1px solid #d4af3740;padding:16px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.nav-logo{display:flex;align-items:center;gap:14px}
+.nav-emblem{width:48px;height:48px;border-radius:50%;overflow:hidden;border:2px solid #d4af37}
+.nav-emblem img{width:100%;height:100%;object-fit:cover}
+.nav-name{font-size:13px;color:#d4af37;letter-spacing:2px;text-transform:uppercase;font-weight:bold}
+.nav-sub{font-size:10px;color:#888;letter-spacing:1px;text-transform:uppercase}
+.nav-links{display:flex;gap:24px}
+.nav-links a{color:#ccc;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:#d4af37}
+.hero{background:#0d0d0d;border-bottom:1px solid #d4af3730;padding:100px 40px;text-align:center}
+.hero-logo{width:200px;height:200px;border-radius:50%;object-fit:cover;object-position:top;border:3px solid #d4af37;margin:0 auto 32px;display:block}
+.hero h1{font-size:48px;color:#d4af37;font-weight:400;letter-spacing:4px;margin-bottom:8px}
+.hero-title{font-size:12px;letter-spacing:6px;text-transform:uppercase;color:#888;margin-bottom:24px}
+.hero-divider{width:60px;height:1px;background:#d4af37;margin:24px auto}
+.hero-tagline{font-size:17px;color:#ccc;font-style:italic;margin-bottom:8px}
+.hero-zone{font-size:13px;color:#666;letter-spacing:2px;margin-bottom:48px}
+.btn-gold{background:#d4af37;color:#111;border:none;padding:15px 44px;font-size:12px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;font-family:'Georgia',serif;transition:all 0.2s;display:inline-block}
+.btn-gold:hover{background:#c9a227}
+.btn-outline{background:transparent;color:#d4af37;border:1px solid #d4af37;padding:15px 44px;font-size:12px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;font-family:'Georgia',serif;margin-left:16px;transition:all 0.2s;display:inline-block}
+.btn-outline:hover{background:#d4af3720}
+section{padding:80px 40px;border-bottom:1px solid #d4af3720}
+.section-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#d4af37;margin-bottom:12px;text-align:center}
+.section-title{font-size:30px;color:#e8e0d0;font-weight:400;text-align:center;margin-bottom:8px}
+.section-divider{width:40px;height:1px;background:#d4af37;margin:16px auto 48px}
+.about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:center;max-width:860px;margin:0 auto}
+.about-img{border:1px solid #d4af3740;overflow:hidden;aspect-ratio:3/4}
+.about-img img{width:100%;height:100%;object-fit:cover;object-position:top}
+.about-text p{color:#aaa;font-size:15px;line-height:1.9;margin-bottom:18px}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.badge{border:1px solid #d4af3760;color:#d4af37;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:7px 16px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#d4af3720;max-width:900px;margin:0 auto}
+.service-card{background:#0d0d0d;padding:36px 28px;text-align:center}
+.svc-icon{font-size:26px;color:#d4af37;margin-bottom:16px}
+.service-card h3{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#d4af37;margin-bottom:14px;font-weight:400}
+.service-card p{font-size:13px;color:#888;line-height:1.8}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;max-width:900px;margin:0 auto}
+.gallery-item{overflow:hidden;background:#1a1a1a;position:relative;aspect-ratio:1}
+.gallery-item.tall{grid-row:span 2;aspect-ratio:auto}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s;display:block}
+.gallery-item:hover img{transform:scale(1.06)}
+.gallery-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,#000000dd);padding:20px 16px 16px;opacity:0;transition:opacity 0.3s}
+.gallery-item:hover .gallery-caption{opacity:1}
+.gallery-caption h4{font-size:12px;color:#d4af37;letter-spacing:1px;margin-bottom:5px;text-transform:uppercase}
+.gallery-caption p{font-size:11px;color:#ccc;line-height:1.5;font-style:italic}
+.reservation-wrap{max-width:640px;margin:0 auto}
+.reservation-note{text-align:center;color:#888;font-size:13px;font-style:italic;margin-bottom:36px}
+.reservation-box{background:#0a0a0a;border:1px solid #d4af3740;padding:48px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#888;margin-bottom:8px}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:#111;border:1px solid #d4af3740;color:#e8e0d0;padding:13px;font-size:14px;font-family:'Georgia',serif;outline:none;transition:border-color 0.2s}
+.form-group input:focus,.form-group textarea:focus{border-color:#d4af37}
+.form-group select{background:#111;color:#e8e0d0;cursor:pointer}
+.form-group select option{background:#111}
+.form-group textarea{resize:vertical;min-height:110px}
+.submit-btn{width:100%;background:#d4af37;color:#111;border:none;padding:17px;font-size:12px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;font-family:'Georgia',serif;transition:all 0.2s;margin-top:4px}
+.submit-btn:hover{background:#c9a227}
+.submit-btn:disabled{opacity:0.5;cursor:default}
+.status-box{background:#d4af3712;border:1px solid #d4af3750;padding:20px;text-align:center;margin-top:20px;display:none}
+.status-box p{color:#d4af37;font-size:13px;letter-spacing:1px;margin-bottom:6px}
+.status-box small{color:#888;font-size:12px;line-height:1.6}
+.contact-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#d4af3720;max-width:900px;margin:0 auto}
+.contact-item{background:#0d0d0d;padding:32px 20px;text-align:center}
+.ci-icon{font-size:20px;color:#d4af37;margin-bottom:12px}
+.ci-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#666;margin-bottom:8px}
+.ci-value{font-size:13px;color:#ccc}
+.ci-value a{color:#d4af37}
+footer{background:#0a0a0a;padding:48px 40px;text-align:center;border-top:1px solid #d4af3740}
+.footer-logo{width:56px;height:56px;border-radius:50%;overflow:hidden;border:2px solid #d4af37;margin:0 auto 20px;display:block}
+.footer-logo img{width:100%;height:100%;object-fit:cover;object-position:top}
+footer .fname{font-size:15px;color:#d4af37;letter-spacing:2px;margin-bottom:8px}
+footer .fsub{font-size:12px;color:#666;letter-spacing:1px;margin-bottom:6px}
+footer .fcopy{font-size:11px;color:#444;margin-top:20px}
+@media(max-width:768px){
+  nav{flex-direction:column;gap:16px;padding:16px 20px}
+  .nav-links{flex-wrap:wrap;justify-content:center;gap:14px}
+  .hero{padding:60px 20px}.hero h1{font-size:30px}.hero-logo{width:140px;height:140px}
+  section{padding:56px 20px}
+  .about-grid,.services-grid,.form-row{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr}
+  .gallery-item.tall{grid-row:span 1;aspect-ratio:1}
+  .contact-bar{grid-template-columns:1fr 1fr}
+  .reservation-box{padding:28px 20px}
+  .btn-outline{margin-left:0;margin-top:12px}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">
+    <div class="nav-emblem"><img src="images/logo.jpg" alt="elm"/></div>
+    <div><div class="nav-name">El Moundhir Tiouche</div><div class="nav-sub">Chef Privé à Domicile</div></div>
+  </div>
+  <div class="nav-links">
+    <a href="#apropos">À propos</a>
+    <a href="#services">Services</a>
+    <a href="#galerie">Galerie</a>
+    <a href="#reservation">Réservation</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+<div class="hero">
+  <img class="hero-logo" src="images/logo.jpg" alt="Chef El Moundhir Tiouche"/>
+  <div style="font-size:32px;color:#d4af3760;margin-bottom:16px;letter-spacing:8px">❧ ✦ ❧</div>
+  <h1>El Moundhir Tiouche</h1>
+  <div class="hero-title">Chef Privé à Domicile</div>
+  <div class="hero-divider"></div>
+  <p class="hero-tagline">Cuisine du monde · Cuisine gastronomique</p>
+  <p class="hero-zone">Bourges et alentours</p>
+  <a class="btn-gold" href="#reservation">Réserver une expérience</a>
+  <a class="btn-outline" href="#galerie">Voir la galerie</a>
+</div>
+<section id="apropos">
+  <div class="section-label">Mon histoire</div>
+  <div class="section-title">À propos du Chef</div>
+  <div class="section-divider"></div>
+  <div class="about-grid">
+    <div class="about-img"><img src="images/logo.jpg" alt="Chef El Moundhir Tiouche"/></div>
+    <div class="about-text">
+      <p>Passionné de gastronomie depuis toujours, je mets mon expertise culinaire au service de vos moments les plus précieux. Que ce soit pour un dîner intimiste en amoureux ou une réception d'exception, je vous offre une expérience gastronomique unique à domicile.</p>
+      <p>Spécialisé en cuisine du monde et en gastronomie française, je compose des menus sur-mesure qui reflètent votre personnalité et vos envies, avec des produits soigneusement sélectionnés.</p>
+      <p>Mon engagement : vous faire vivre une expérience inoubliable, dans le confort de votre foyer.</p>
+      <div class="badges">
+        <span class="badge">Cuisine du monde</span>
+        <span class="badge">Gastronomique</span>
+        <span class="badge">Sur mesure</span>
+        <span class="badge">Produits frais</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="services">
+  <div class="section-label">Ce que je propose</div>
+  <div class="section-title">Mes Services</div>
+  <div class="section-divider"></div>
+  <div class="services-grid">
+    <div class="service-card"><div class="svc-icon">♛</div><h3>Dîners gastronomiques</h3><p>Menu personnalisé, dressage soigné, service raffiné dans votre domicile.</p></div>
+    <div class="service-card"><div class="svc-icon">◈</div><h3>Événements privés</h3><p>Anniversaires, fiançailles, réunions… prise en charge complète de la restauration.</p></div>
+    <div class="service-card"><div class="svc-icon">✦</div><h3>Réceptions & cocktails</h3><p>Bouchées élaborées et amuse-bouches créatifs pour vos cocktails et réceptions.</p></div>
+    <div class="service-card"><div class="svc-icon">❋</div><h3>Cuisine du monde</h3><p>Voyage culinaire à travers les saveurs du monde, préparées avec authenticité.</p></div>
+    <div class="service-card"><div class="svc-icon">⊛</div><h3>Menu sur mesure</h3><p>Chaque menu créé selon vos goûts, régimes alimentaires et préférences.</p></div>
+    <div class="service-card"><div class="svc-icon">◉</div><h3>Cours de cuisine</h3><p>Sessions conviviales et personnalisées pour apprendre les techniques gastronomiques.</p></div>
+  </div>
+</section>
+<section id="galerie">
+  <div class="section-label">Mes créations</div>
+  <div class="section-title">Galerie</div>
+  <div class="section-divider"></div>
+  <div class="gallery-grid">
+    <div class="gallery-item tall"><img src="images/plat1.jpg" alt="Takoyaki"/><div class="gallery-caption"><h4>Takoyaki au poulpe</h4><p>Mayo au beurre harissa · Sashimi de poulpe · Fleurs de roquette</p></div></div>
+    <div class="gallery-item"><img src="images/plat2.jpg" alt="Tartare"/><div class="gallery-caption"><h4>Tartare de saumon & thon</h4><p>Grenade · Cebette · Crème bisque de crevettes · Huile de coriandre</p></div></div>
+    <div class="gallery-item"><img src="images/plat3.jpg" alt="Carpaccio"/><div class="gallery-caption"><h4>Carpaccio de betterave</h4><p>Mayo à la betterave jaune</p></div></div>
+    <div class="gallery-item"><img src="images/plat4.jpg" alt="Caille"/><div class="gallery-caption"><h4>Caille en sarcophage à la façon du Chef</h4><p>Croûte feuilletée · Sauce gastrique · Purée Joël Robuchon</p></div></div>
+    <div class="gallery-item"><img src="images/plat5.jpg" alt="Bar"/><div class="gallery-caption"><h4>Filet de bar</h4><p>Purée maison · Légumes de saison · Beurre blanc</p></div></div>
+    <div class="gallery-item"><img src="images/plat6.jpg" alt="Millefeuille"/><div class="gallery-caption"><h4>Millefeuille feuille de brick</h4><p>Crème de chèvre au za'atar · Coulis de figues · Sauce à la figue</p></div></div>
+  </div>
+</section>
+<section id="reservation">
+  <div class="section-label">Faites une demande</div>
+  <div class="section-title">Réserver une expérience</div>
+  <div class="section-divider"></div>
+  <div class="reservation-wrap">
+    <p class="reservation-note">Toute demande est soumise à confirmation du Chef avant validation définitive.</p>
+    <div class="reservation-box">
+      <div class="form-row">
+        <div class="form-group"><label>Prénom & Nom *</label><input type="text" id="f-nom" placeholder="Votre nom complet"/></div>
+        <div class="form-group"><label>Téléphone *</label><input type="tel" id="f-tel" placeholder="06 XX XX XX XX"/></div>
+      </div>
+      <div class="form-group"><label>Email *</label><input type="email" id="f-email" placeholder="votre@email.com"/></div>
+      <div class="form-row">
+        <div class="form-group"><label>Date souhaitée *</label><input type="date" id="f-date"/></div>
+        <div class="form-group"><label>Nombre de convives *</label><input type="number" id="f-convives" placeholder="ex: 6" min="1"/></div>
+      </div>
+      <div class="form-group"><label>Type d'événement *</label>
+        <select id="f-type">
+          <option value="">Sélectionnez...</option>
+          <option>Dîner gastronomique</option>
+          <option>Événement privé</option>
+          <option>Réception / Cocktail</option>
+          <option>Anniversaire</option>
+          <option>Cours de cuisine</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Message & précisions</label><textarea id="f-message" placeholder="Préférences culinaires, allergies, adresse, budget..."></textarea></div>
+      <button class="submit-btn" id="submit-btn" onclick="submitForm()">Envoyer ma demande</button>
+      <div class="status-box" id="status-box">
+        <p>✦ Demande envoyée avec succès</p>
+        <small>Votre demande est en attente de confirmation. El Moundhir vous contactera personnellement dans les plus brefs délais.</small>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="contact">
+  <div class="section-label">Me contacter</div>
+  <div class="section-title">Contact</div>
+  <div class="section-divider"></div>
+  <div class="contact-bar">
+    <div class="contact-item"><div class="ci-icon">☎</div><div class="ci-label">Téléphone</div><div class="ci-value"><a href="tel:0749374380">07 49 37 43 80</a></div></div>
+    <div class="contact-item"><div class="ci-icon">✉</div><div class="ci-label">Email</div><div class="ci-value" style="font-size:11px"><a href="mailto:Elmoundhir.tiouche18@gmail.com">Elmoundhir.tiouche18@gmail.com</a></div></div>
+    <div class="contact-item"><div class="ci-icon">◎</div><div class="ci-label">Zone</div><div class="ci-value">Bourges et alentours</div></div>
+    <div class="contact-item"><div class="ci-icon">✿</div><div class="ci-label">Instagram</div><div class="ci-value"><a href="https://instagram.com/elm_tch" target="_blank">@elm_tch</a></div></div>
+  </div>
+</section>
+<footer>
+  <div class="footer-logo"><img src="images/logo.jpg" alt="elm"/></div>
+  <p class="fname">El Moundhir Tiouche</p>
+  <p class="fsub">Chef Privé à Domicile · Cuisine du monde · Cuisine gastronomique</p>
+  <p class="fsub">Bourges et alentours</p>
+  <p class="fcopy">© 2026 elm — Tous droits réservés</p>
+</footer>
+<script>
+function submitForm(){
+  var nom=document.getElementById('f-nom').value.trim();
+  var tel=document.getElementById('f-tel').value.trim();
+  var email=document.getElementById('f-email').value.trim();
+  var date=document.getElementById('f-date').value;
+  var type=document.getElementById('f-type').value;
+  if(!nom||!tel||!email||!date||!type){alert('Merci de remplir tous les champs obligatoires (*).'); return;}
+  var btn=document.getElementById('submit-btn');
+  btn.disabled=true; btn.textContent='Demande envoyée...';
+  document.getElementById('status-box').style.display='block';
+  document.getElementById('status-box').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+</script>
+</body>
+</html>
